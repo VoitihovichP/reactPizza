@@ -7,7 +7,9 @@
     align-items: center;
 
     svg {
+      transform: scale(1, -1);
       margin-right: 8px;
+      transition: 0.3s all;
     }
 
     b {
@@ -18,6 +20,11 @@
       color: $orange;
       border-bottom: 1px dashed $orange;
       cursor: pointer;
+    }
+    &_active {
+      svg {
+        transform: scale(-1, 1);
+      }
     }
   }
 

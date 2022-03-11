@@ -6,3 +6,9 @@ export const categoriesItems = [
   'Острые',
   'Закрытые'
 ];
+
+export const sortSelectItems = [
+  'популярности',
+  'цене',
+  'алфавиту'
+]
