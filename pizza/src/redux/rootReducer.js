@@ -1,12 +1,10 @@
-import { INCREMENT } from "../constants/actions";
+import { combineReducers } from "redux";
+import filltersReducer from './reducers/filltersReducer';
+import pizzasReducer from './reducers/pizzasReducer';
 
-const rootReducer = (state = 0, action) => {
-  switch (action.type) {
-    case INCREMENT:
-      return state + 1;
-    default:
-      return state;
-  }
-}
+const rootReducer = combineReducers({
+  fillters: filltersReducer,
+  pizzas: pizzasReducer
+});
 
 export default rootReducer;

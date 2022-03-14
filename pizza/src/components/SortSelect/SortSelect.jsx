@@ -35,17 +35,17 @@ const SortSelect = ({ items }) => {
           />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setActiveSelect(!isActiveSelect)}>{items[selectOption]}</span>
+        <span onClick={() => setActiveSelect(!isActiveSelect)}>{items[selectOption].name}</span>
       </div>
       {isActiveSelect && (
         <div className="sort__popup">
           <ul>
             {items.map((item, index) => (
               <li
-                key={item}
+                key={item.name}
                 className={selectOption === index ? 'active' : ''}
                 onClick={() => onSelectOption(index)}>
-                {item}
+                {item.name}
               </li>
             ))}
           </ul>

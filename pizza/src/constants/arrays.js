@@ -8,9 +8,9 @@ export const categoriesItems = [
 ];
 
 export const sortSelectItems = [
-  'популярности',
-  'цене',
-  'алфавиту'
+  {name: 'популярности', type: 'popular'},
+  {name: 'цене', type: 'price'},
+  {name: 'алфавиту', type: 'alphabet'}
 ];
 
 export const pizzaTypes = [
