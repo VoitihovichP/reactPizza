@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
-const CategoriesBtn = ({ items }) => {
+const CategoriesBtn = memo(({ items, onSelect }) => {
   const [activeItem, setActiveItem] = useState(0);
+
+  const onSelectItem = (index) => {
+    setActiveItem(index);
+    onSelect(index);
+  };
 
   return (
     <div className="categories">
@@ -9,7 +14,7 @@ const CategoriesBtn = ({ items }) => {
         {items &&
           items.map((item, index) => (
             <li
-              onClick={() => setActiveItem(index)}
+              onClick={() => onSelectItem(index)}
               className={activeItem === index ? 'active' : ''}
               key={`${item}_${index}`}>
               {item}
@@ -18,6 +23,6 @@ const CategoriesBtn = ({ items }) => {
       </ul>
     </div>
   );
-};
+});
 
 export default CategoriesBtn;

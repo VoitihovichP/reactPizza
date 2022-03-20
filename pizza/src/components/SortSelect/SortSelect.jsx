@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 
-const SortSelect = ({ items }) => {
+const SortSelect = memo(({ items }) => {
   const [isActiveSelect, setActiveSelect] = useState(false);
   const [selectOption, setOption] = useState(0);
   const sortRef = useRef();
@@ -53,6 +53,6 @@ const SortSelect = ({ items }) => {
       )}
     </div>
   );
-};
+});
 
 export default SortSelect;

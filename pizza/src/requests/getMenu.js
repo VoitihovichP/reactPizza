@@ -1,5 +1,5 @@
 const getMenu = async () => {
-  const response = await fetch('http://localhost:3000/db.json');
+  const response = await fetch('http://localhost:3001/pizzas');
   return await response.json();
 }
 
